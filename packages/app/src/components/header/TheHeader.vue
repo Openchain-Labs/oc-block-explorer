@@ -16,7 +16,7 @@
         </div>
         <PopoverGroup as="nav" class="navigation-container">
           <LinksPopover :label="t('header.nav.blockExplorer')" :items="blockExplorerLinks" />
-          <LinksPopover :label="t('header.nav.tools')" :items="toolsLinks" />
+          <!-- <LinksPopover :label="t('header.nav.tools')" :items="toolsLinks" /> -->
           <a
             v-for="item in navigation"
             :key="item.label"
@@ -159,7 +159,7 @@ const { currentNetwork } = useContext();
 const navigation = reactive([
   {
     label: computed(() => t("header.nav.documentation")),
-    url: "https://docs.zksync.io/build/tooling/block-explorer/getting-started.html",
+    url: "https://github.com/Openchain-Labs",
   },
 ]);
 
@@ -203,8 +203,8 @@ if (currentNetwork.value.bridgeUrl) {
 const toolsLinks = reactive(links);
 
 const socials = [
-  { url: "https://join.zksync.dev/", component: DiscordIcon },
-  { url: "https://twitter.com/zksync", component: TwitterIcon },
+  { url: "https://discord.gg/kvg2FhuV", component: DiscordIcon },
+  { url: "https://x.com/openchainhq", component: TwitterIcon },
 ];
 
 const hasContent = computed(() => {
@@ -226,7 +226,7 @@ const hasContent = computed(() => {
 
 <style lang="scss">
 .header-popover-container {
-  @apply relative bg-primary-900;
+  @apply relative bg-black;
   .header-wrap {
     @apply container z-50;
   }
@@ -299,10 +299,10 @@ const hasContent = computed(() => {
     }
   }
   .hero-banner-container {
-    @apply absolute left-0 top-full flex h-64 w-full items-end justify-end overflow-hidden bg-primary-900;
+    @apply absolute left-0 top-full flex h-64 w-full items-end justify-end overflow-hidden bg-black;
 
     .hero-image {
-      @apply h-5/6 w-auto;
+      @apply h-full w-full object-cover justify-center;
     }
   }
   .home-banner {
